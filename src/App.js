@@ -1356,17 +1356,18 @@ export default function App() {
     reader.readAsText(file);
   };
 
+  // FIX: Added 'static: true' to ALL layout items to disable moving/resizing
   const layout = [
     { i: "stats", x: 0, y: 0, w: 12, h: 2, static: true },
-    { i: "trend", x: 0, y: 2, w: 8, h: 4 },
-    { i: "winrate", x: 8, y: 2, w: 4, h: 4 },
-    { i: "pnl_cal", x: 0, y: 6, w: 6, h: 5 }, // Width Reduced to 6
-    { i: "donut", x: 6, y: 6, w: 6, h: 5 }, // Width Increased to 6 to balance
-    { i: "sankey", x: 0, y: 11, w: 12, h: 4 },
-    { i: "budget", x: 0, y: 15, w: 4, h: 4 },
-    { i: "portfolio", x: 4, y: 15, w: 4, h: 4 },
-    { i: "list", x: 8, y: 15, w: 4, h: 4 },
-    { i: "input", x: 0, y: 19, w: 12, h: 2 },
+    { i: "trend", x: 0, y: 2, w: 8, h: 4, static: true },
+    { i: "winrate", x: 8, y: 2, w: 4, h: 4, static: true },
+    { i: "pnl_cal", x: 0, y: 6, w: 6, h: 5, static: true },
+    { i: "donut", x: 6, y: 6, w: 6, h: 5, static: true },
+    { i: "sankey", x: 0, y: 11, w: 12, h: 4, static: true },
+    { i: "budget", x: 0, y: 15, w: 4, h: 4, static: true },
+    { i: "portfolio", x: 4, y: 15, w: 4, h: 4, static: true },
+    { i: "list", x: 8, y: 15, w: 4, h: 4, static: true },
+    { i: "input", x: 0, y: 19, w: 12, h: 2, static: true },
   ];
 
   return (
@@ -1486,6 +1487,8 @@ export default function App() {
         rowHeight={70}
         width={1200}
         draggableHandle=".drag-handle"
+        isDraggable={false}
+        isResizable={false}
       >
         <div key="stats" style={{ display: "flex", gap: "15px" }}>
           <StatBox
