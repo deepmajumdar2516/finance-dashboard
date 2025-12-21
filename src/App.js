@@ -1,3 +1,12 @@
+import React, { useState, useEffect } from "react";
+import { initializeApp } from "firebase/app";
+import { getFirestore, doc, onSnapshot, setDoc } from "firebase/firestore";
+import { Responsive, WidthProvider } from "react-grid-layout";
+import "react-grid-layout/css/styles.css";
+import "react-resizable/css/styles.css";
+
+const ResponsiveGridLayout = WidthProvider(Responsive);
+
 import React, { useState, useEffect, useMemo, useCallback, useRef } from "react";
 // FIX: Use 'require' to prevent "undefined" errors in CodeSandbox
 const ReactGridLayout = require("react-grid-layout");
